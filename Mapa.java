@@ -5,6 +5,7 @@ import java.util.LinkedHashMap;
 import java.util.TreeMap;
 
 public class Mapa {
+    
     Map<String, String> mapa;
     
     public Map<String, String> newMap(int i){
