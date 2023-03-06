@@ -126,71 +126,92 @@ public class Main {
                                 switch(mapa.get(ant)){
                                     case "Mueble de terraza":{
                                         mueblest = mueblest + "\n-" + ant + " " + i;
+                                        break;
                                     }
                                     case "Sillones de masaje":{
                                         sillonesm = sillonesm + "\n-" + ant + " " + i;
+                                        break;
                                     }
                                     case "Bebidas":{
                                         bebidas = bebidas + "\n-" + ant + " " + i;
+                                        break;
                                     }
                                     case "Condimentos":{
                                         condimentos = condimentos + "\n-" + ant + " " + i;
+                                        break;
                                     }
                                     case "Frutas":{
                                         frutas = frutas + "\n-" + ant + " " + i;
+                                        break;
                                     }
                                     case "Carnes":{
                                         carnes = carnes + "\n-" + ant + " " + i;
+                                        break;
                                     }
                                     case "Lácteos":{
                                         lacteos = lacteos + "\n-" + ant + " " + i;
+                                        break;
                                     }
                                 }
                                 switch(coleccion.get(coleccion.size()-1)){
                                     case "Mueble de terraza":{
                                         mueblest = mueblest + "\n-" + coleccion.get(coleccion.size()-1) + " 1";
+                                        break;
                                     }
                                     case "Sillones de masaje":{
                                         sillonesm = sillonesm + "\n-" + coleccion.get(coleccion.size()-1) + " 1";
+                                        break;
                                     }
                                     case "Bebidas":{
                                         bebidas = bebidas + "\n-" + coleccion.get(coleccion.size()-1) + " 1";
+                                        break;
                                     }
                                     case "Condimentos":{
                                         condimentos = condimentos + "\n-" + coleccion.get(coleccion.size()-1) + " 1";
+                                        break;
                                     }
                                     case "Frutas":{
                                         frutas = frutas + "\n-" + coleccion.get(coleccion.size()-1) + " 1";
+                                        break;
                                     }
                                     case "Carnes":{
                                         carnes = carnes + "\n-" + coleccion.get(coleccion.size()-1) + " 1";
+                                        break;
                                     }
                                     case "Lácteos":{
                                         lacteos = lacteos + "\n-" + coleccion.get(coleccion.size()-1) + " 1";
+                                        break;
                                     }
                                 }
                             } else {
                                 switch(mapa.get(ant)){
                                     case "Mueble de terraza":{
                                         mueblest = mueblest + "\n-" + ant + " " + i;
+                                        break;
                                     }
                                     case "Sillones de masaje":{
                                         sillonesm = sillonesm + "\n-" + ant + " " + i;
+                                        break;
                                     }
                                     case "Bebidas":{
                                         bebidas = bebidas + "\n-" + ant + " " + i;
+                                        break;
                                     }
                                     case "Condimentos":{
                                         condimentos = condimentos + "\n-" + ant + " " + i;
+                                        break;
                                     }
                                     case "Frutas":{
                                         frutas = frutas + "\n-" + ant + " " + i;
+                                        break;
                                     }
                                     case "Carnes":{
                                         carnes = carnes + "\n-" + ant + " " + i;
+                                        break;
                                     }
                                     case "Lácteos":{
                                         lacteos = lacteos + "\n-" + ant + " " + i;
+                                        break;
                                     }
                                 }
                                 ant = producto;
@@ -203,24 +224,31 @@ public class Main {
                                 switch(mapa.get(ant)){
                                     case "Mueble de terraza":{
                                         mueblest = mueblest + "\n-" + ant + " " + i;
+                                        break;
                                     }
                                     case "Sillones de masaje":{
                                         sillonesm = sillonesm + "\n-" + ant + " " + i;
+                                        break;
                                     }
                                     case "Bebidas":{
                                         bebidas = bebidas + "\n-" + ant + " " + i;
+                                        break;
                                     }
                                     case "Condimentos":{
                                         condimentos = condimentos + "\n-" + ant + " " + i;
+                                        break;
                                     }
                                     case "Frutas":{
                                         frutas = frutas + "\n-" + ant + " " + i;
+                                        break;
                                     }
                                     case "Carnes":{
                                         carnes = carnes + "\n-" + ant + " " + i;
+                                        break;
                                     }
                                     case "Lácteos":{
                                         lacteos = lacteos + "\n-" + ant + " " + i;
+                                        break;
                                     }
                                 }
                             }
@@ -235,7 +263,63 @@ public class Main {
                     break;
                 }
                 case 5:{
-                    
+                    String productos = "Productos: \n";
+                    for(String nombre : mapa.keySet()){
+                        productos = productos + "\n-" + nombre;
+                    }
+                    System.out.println(productos);
+                    System.out.println(menu2);
+                    opcion = teclado.nextInt();
+                    teclado.nextLine();
+                    break;
+                }
+                case 6:{
+                    String productos = "Productos: \n";
+                    String mueblest = "\nMuebles de terraza: ";
+                    String sillonesm = "\nSillones de masaje: ";
+                    String bebidas = "\nBebidas: ";
+                    String condimentos = "\nCondimentos: ";
+                    String frutas = "\nFrutas: ";
+                    String carnes = "\nCarnes: ";
+                    String lacteos = "\nLacteos: ";
+                    for(String nombre : mapa.keySet()){
+                        switch(mapa.get(nombre)){
+                            case "Mueble de terraza":{
+                                mueblest = mueblest + "\n-" + nombre;
+                                break;
+                            }
+                            case "Sillones de masaje":{
+                                sillonesm = sillonesm + "\n-" + nombre;
+                                break;
+                            }
+                            case "Bebidas":{
+                                bebidas = bebidas + "\n-" + nombre;
+                                break;
+                            }
+                            case "Condimentos":{
+                                condimentos = condimentos + "\n-" + nombre;
+                                break;
+                            }
+                            case "Frutas":{
+                                frutas = frutas + "\n-" + nombre;
+                                break;
+                            }
+                            case "Carnes":{
+                                carnes = carnes + "\n-" + nombre;
+                                break;
+                            }
+                            case "Lácteos":{
+                                lacteos = lacteos + "\n-" + nombre;
+                                break;
+                            }
+                        }
+                    }
+                    productos = mueblest + sillonesm + bebidas + condimentos + frutas + carnes + lacteos;
+                    System.out.println(productos);
+                    System.out.println(menu2);
+                    opcion = teclado.nextInt();
+                    teclado.nextLine();
+                    break;                
                 }
             }
         }
