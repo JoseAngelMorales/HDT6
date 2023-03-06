@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.util.Map;
 import java.util.Scanner;
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class Main {
     public static void main(String[] args) throws Exception {
@@ -26,11 +27,8 @@ public class Main {
         
         Map<String, String> mapa = gmapa.newMap(tipomapa);
 
-        System.out.println("Ingrese la direccion del archivo: ");
-        String archivo = teclado.nextLine();
-
         try{
-            BufferedReader reader = new BufferedReader(new FileReader(archivo));
+            BufferedReader reader = new BufferedReader(new FileReader("inventario.txt"));
             String linea = reader.readLine();
             while(linea != null){
                 Namer namer = factory.getNamer(linea);
@@ -79,7 +77,35 @@ public class Main {
                     break;
                 }
                 case 3:{
-                    
+                    Collections.sort(coleccion);
+                    String inv = "";
+                    String ant = coleccion.get(0);
+                    int i = 0;
+                    int ind = 1;
+                    for(String producto : coleccion){
+                        if(ant.equals(producto) == false){
+                            if(ind == coleccion.size()){
+                                inv = inv + "\n" + ant + " " + i;
+                                inv = inv + "\n" + coleccion.get(coleccion.size()-1) + " 1";
+                            } else {
+                                inv = inv + "\n" + ant + " " + i;
+                                ant = producto;
+                                i = 1;
+                            }
+                        }
+                        else if(ant.equals(producto) == true){
+                            i++;
+                            if(ind == coleccion.size()){
+                                inv = inv + "\n" + ant + " " + i;
+                            }
+                        }
+                        ind++;
+                    }
+                    System.out.println(inv);
+                    System.out.println(menu2);
+                    opcion = teclado.nextInt();
+                    teclado.nextLine();
+                    break;
                 }
             }
         }
