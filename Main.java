@@ -107,6 +107,136 @@ public class Main {
                     teclado.nextLine();
                     break;
                 }
+                case 4:{
+                    Collections.sort(coleccion);
+                    String inv = "";
+                    String mueblest = "\nMuebles de terraza: ";
+                    String sillonesm = "\nSillones de masaje: ";
+                    String bebidas = "\nBebidas: ";
+                    String condimentos = "\nCondimentos: ";
+                    String frutas = "\nFrutas: ";
+                    String carnes = "\nCarnes: ";
+                    String lacteos = "\nLacteos: ";
+                    String ant = coleccion.get(0);
+                    int i = 0;
+                    int ind = 1;
+                    for(String producto : coleccion){
+                        if(ant.equals(producto) == false){
+                            if(ind == coleccion.size()){
+                                switch(mapa.get(ant)){
+                                    case "Mueble de terraza":{
+                                        mueblest = mueblest + "\n-" + ant + " " + i;
+                                    }
+                                    case "Sillones de masaje":{
+                                        sillonesm = sillonesm + "\n-" + ant + " " + i;
+                                    }
+                                    case "Bebidas":{
+                                        bebidas = bebidas + "\n-" + ant + " " + i;
+                                    }
+                                    case "Condimentos":{
+                                        condimentos = condimentos + "\n-" + ant + " " + i;
+                                    }
+                                    case "Frutas":{
+                                        frutas = frutas + "\n-" + ant + " " + i;
+                                    }
+                                    case "Carnes":{
+                                        carnes = carnes + "\n-" + ant + " " + i;
+                                    }
+                                    case "Lácteos":{
+                                        lacteos = lacteos + "\n-" + ant + " " + i;
+                                    }
+                                }
+                                switch(coleccion.get(coleccion.size()-1)){
+                                    case "Mueble de terraza":{
+                                        mueblest = mueblest + "\n-" + coleccion.get(coleccion.size()-1) + " 1";
+                                    }
+                                    case "Sillones de masaje":{
+                                        sillonesm = sillonesm + "\n-" + coleccion.get(coleccion.size()-1) + " 1";
+                                    }
+                                    case "Bebidas":{
+                                        bebidas = bebidas + "\n-" + coleccion.get(coleccion.size()-1) + " 1";
+                                    }
+                                    case "Condimentos":{
+                                        condimentos = condimentos + "\n-" + coleccion.get(coleccion.size()-1) + " 1";
+                                    }
+                                    case "Frutas":{
+                                        frutas = frutas + "\n-" + coleccion.get(coleccion.size()-1) + " 1";
+                                    }
+                                    case "Carnes":{
+                                        carnes = carnes + "\n-" + coleccion.get(coleccion.size()-1) + " 1";
+                                    }
+                                    case "Lácteos":{
+                                        lacteos = lacteos + "\n-" + coleccion.get(coleccion.size()-1) + " 1";
+                                    }
+                                }
+                            } else {
+                                switch(mapa.get(ant)){
+                                    case "Mueble de terraza":{
+                                        mueblest = mueblest + "\n-" + ant + " " + i;
+                                    }
+                                    case "Sillones de masaje":{
+                                        sillonesm = sillonesm + "\n-" + ant + " " + i;
+                                    }
+                                    case "Bebidas":{
+                                        bebidas = bebidas + "\n-" + ant + " " + i;
+                                    }
+                                    case "Condimentos":{
+                                        condimentos = condimentos + "\n-" + ant + " " + i;
+                                    }
+                                    case "Frutas":{
+                                        frutas = frutas + "\n-" + ant + " " + i;
+                                    }
+                                    case "Carnes":{
+                                        carnes = carnes + "\n-" + ant + " " + i;
+                                    }
+                                    case "Lácteos":{
+                                        lacteos = lacteos + "\n-" + ant + " " + i;
+                                    }
+                                }
+                                ant = producto;
+                                i = 1;
+                            }
+                        }
+                        else if(ant.equals(producto) == true){
+                            i++;
+                            if(ind == coleccion.size()){
+                                switch(mapa.get(ant)){
+                                    case "Mueble de terraza":{
+                                        mueblest = mueblest + "\n-" + ant + " " + i;
+                                    }
+                                    case "Sillones de masaje":{
+                                        sillonesm = sillonesm + "\n-" + ant + " " + i;
+                                    }
+                                    case "Bebidas":{
+                                        bebidas = bebidas + "\n-" + ant + " " + i;
+                                    }
+                                    case "Condimentos":{
+                                        condimentos = condimentos + "\n-" + ant + " " + i;
+                                    }
+                                    case "Frutas":{
+                                        frutas = frutas + "\n-" + ant + " " + i;
+                                    }
+                                    case "Carnes":{
+                                        carnes = carnes + "\n-" + ant + " " + i;
+                                    }
+                                    case "Lácteos":{
+                                        lacteos = lacteos + "\n-" + ant + " " + i;
+                                    }
+                                }
+                            }
+                        }
+                        ind++;
+                    }
+                    inv = mueblest + sillonesm + bebidas + condimentos + frutas + carnes + lacteos;
+                    System.out.println(inv);
+                    System.out.println(menu2);
+                    opcion = teclado.nextInt();
+                    teclado.nextLine();
+                    break;
+                }
+                case 5:{
+                    
+                }
             }
         }
     }
