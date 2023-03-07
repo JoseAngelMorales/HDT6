@@ -1,5 +1,6 @@
 package HDT6;
 
+// Importar las librerias a utilizar
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -15,6 +16,7 @@ public class Main {
         Factory factory = new Factory();
         Mapa gmapa = new Mapa();
 
+        // Crear un nuevo mapa basado en el input del usuario
         String menu1 = "Bienvenido al programa, elija la opcion de implementacion\n1. Hashmap\n2. Linked Hashmap\n3. Treemap";
         System.out.println(menu1);
         int tipomapa = teclado.nextInt();
@@ -27,6 +29,7 @@ public class Main {
         
         Map<String, String> mapa = gmapa.newMap(tipomapa);
 
+        // Leer el archivo inventario.txt y agregar los contenidos al mapa previamente creado, usando el nombre de los productos como las llaves y los tipos de productos como sus valores.
         try{
             BufferedReader reader = new BufferedReader(new FileReader("inventario.txt"));
             String linea = reader.readLine();
@@ -39,7 +42,10 @@ public class Main {
             System.out.println("No se ha encontrado la direccion del archivo.");
         }
         
+        //Crea un ArrayList tipo String donde las llaves (nombre del producto) se guardaran.
         ArrayList<String> coleccion = new ArrayList<String>();
+
+        //Crea el menu del que el usuario elija las opciones.
         String menu2 = "\nElija una de las siguientes opciones\n1. Agregar un producto\n2. Ver categoria de un producto\n3. Mostrar productos en inventario\n4. Mostrar productos en inventario por tipo\n5. Mostrar productos\n6. Mostrar productos ordenados por tipo\n7. Cerrar el programa\nIngrese su opcion: ";
         int opcion = 1;
         System.out.println(menu2);
@@ -47,6 +53,7 @@ public class Main {
         teclado.nextLine();
         while(opcion >= 1 && opcion < 7){
             switch(opcion){
+                // Agrega un producto a la coleccion.
                 case 1: {
                     System.out.println("Ingrese el nombre del producto: ");
                     String opc1 = teclado.nextLine();
@@ -62,6 +69,7 @@ public class Main {
                     }
                     break;
                 }
+                // Revisa el tipo de un producto buscando so valor usando el nombre del producto como llave.
                 case 2:{
                     System.out.println("Ingrese el nombre del producto: ");
                     String opc2 = teclado.nextLine();
@@ -76,6 +84,7 @@ public class Main {
                     }
                     break;
                 }
+                // Ordenar el ArrayList de productos con la cantidad de productos e imprimirlo.
                 case 3:{
                     Collections.sort(coleccion);
                     String inv = "";
@@ -107,6 +116,7 @@ public class Main {
                     teclado.nextLine();
                     break;
                 }
+                // Ordenar el ArrayList de productos con la cantidad de productos e imprimirlo, seperando los productos en sus categorias.
                 case 4:{
                     Collections.sort(coleccion);
                     String inv = "";
@@ -262,10 +272,11 @@ public class Main {
                     teclado.nextLine();
                     break;
                 }
+                // Imprime todos los productos en orden alfabetica con sus categorias
                 case 5:{
                     String productos = "Productos: \n";
                     for(String nombre : mapa.keySet()){
-                        productos = productos + "\n-" + nombre;
+                        productos = productos + "\n-" + nombre + " | " + mapa.get(nombre);
                     }
                     System.out.println(productos);
                     System.out.println(menu2);
@@ -273,6 +284,7 @@ public class Main {
                     teclado.nextLine();
                     break;
                 }
+                //Imprime todos los productos separados por categorias
                 case 6:{
                     String productos = "Productos: \n";
                     String mueblest = "\nMuebles de terraza: ";

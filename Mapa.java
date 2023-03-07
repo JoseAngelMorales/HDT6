@@ -8,6 +8,7 @@ public class Mapa {
     
     Map<String, String> mapa;
     
+    //Crea un mapa y lo implementa segun la opcion que recibe del usuario
     public Map<String, String> newMap(int i){
 
         switch(i){
